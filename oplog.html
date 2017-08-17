@@ -1,0 +1,51 @@
+<script type="text/x-red" data-template-name="feedparse">
+	<div class="form-row">
+		<label for="node-input-mongo_url">
+					<i class="fa fa-bookmark"></i> <span data-i18n="mongodb.label.mongodb.label.url"></span>
+			</label>
+		<input type="text" id="node-input-mongo_url">
+	</div>
+	<div class="form-row">
+		<label for="node-input-oplog_url">
+				<i class="fa fa-bookmark"></i>
+				<span data-i18n="mongodb.label.oplog_url"></span>
+			</label>
+		<input type="text" id="node-input-oplog_url">
+	</div>
+	<div class="form-row">
+		<label for="node-input-ns"><i class="fa fa-list-ul"></i> <span data-i18n="mongodb.label.ns"></span></label>
+		<input type="text" id="node-input-ns">
+	</div>
+	<div class="form-row">
+		<label for="node-input-name"><i class="fa fa-tag"></i> <span data-i18n="node-red:common.label.name"></span></label>
+		<input type="text" id="node-input-name" data-i18n="[placeholder]node-red:common.label.name">
+	</div>
+</script>
+
+<script type="text/x-red" data-help-name="feedparse">
+	<p>Monitors mongodb oplog</p>
+	<p>The <code>msg.topic</code> contains the operation. The <code>msg.payload</code> contains the object, and <code>msg.id</code>		contains the object id</p>
+</script>
+
+<script type="text/javascript">
+	RED.nodes.registerType('mongodb-oplog', {
+		category: 'advanced-input',
+		color: "#C0DEED",
+		defaults: {
+			name: { value: "" },
+			mongo_url: { value: "{{{MONGO_URL}}}", required: true },
+			oplog_url: { value: "{{{OPLOG_URL}}}", required: true },
+			ns: { value: "", required: true }
+		},
+		inputs: 0,
+		outputs: 1,
+		icon: "mongodb.png",
+		label: function () {
+			return this.name || this.ns;
+		},
+		labelStyle: function () {
+			return this.name ? "node_label_italic" : "";
+		}
+	});
+
+</script>

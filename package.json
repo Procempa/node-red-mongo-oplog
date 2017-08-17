@@ -1,0 +1,34 @@
+{
+  "name": "node-red-mongo-oplog",
+  "version": "1.0.0",
+  "description": "Nodered Mongodb Oplog emitter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Procempa/node-red-mongo-oplog.git"
+  },
+  "keywords": [
+    "node-red",
+    "mongodb",
+    "oplog"
+  ],
+  "author": "Procempa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Procempa/node-red-mongo-oplog/issues"
+  },
+  "homepage": "https://github.com/Procempa/node-red-mongo-oplog#readme",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "mongo-oplog": "^2.0.2",
+    "mongodb": "^2.2.31"
+  },
+  "node-red": {
+    "nodes": {
+      "mongo-oplog": "oplog.js"
+    }
+  }
+}
