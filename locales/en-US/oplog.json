@@ -1,0 +1,9 @@
+{
+	"mongodbOplog": {
+		"label": {
+			"url": "MONGO_URL",
+			"oplog_url": "OPLOG_URL",
+			"ns": "namespace"
+		}
+	}
+}

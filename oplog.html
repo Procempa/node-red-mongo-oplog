@@ -1,19 +1,19 @@
-<script type="text/x-red" data-template-name="feedparse">
+<script type="text/x-red" data-template-name="mongodbOplog">
 	<div class="form-row">
 		<label for="node-input-mongo_url">
-					<i class="fa fa-bookmark"></i> <span data-i18n="mongodb.label.mongodb.label.url"></span>
+					<i class="fa fa-bookmark"></i> <span data-i18n="mongodbOplog.label.url"></span>
 			</label>
 		<input type="text" id="node-input-mongo_url">
 	</div>
 	<div class="form-row">
 		<label for="node-input-oplog_url">
 				<i class="fa fa-bookmark"></i>
-				<span data-i18n="mongodb.label.oplog_url"></span>
+				<span data-i18n="mongodbOplog.label.oplog_url"></span>
 			</label>
 		<input type="text" id="node-input-oplog_url">
 	</div>
 	<div class="form-row">
-		<label for="node-input-ns"><i class="fa fa-list-ul"></i> <span data-i18n="mongodb.label.ns"></span></label>
+		<label for="node-input-ns"><i class="fa fa-list-ul"></i> <span data-i18n="mongodbOplog.label.ns"></span></label>
 		<input type="text" id="node-input-ns">
 	</div>
 	<div class="form-row">
@@ -22,15 +22,15 @@
 	</div>
 </script>
 
-<script type="text/x-red" data-help-name="feedparse">
+<script type="text/x-red" data-help-name="mongodbOplog">
 	<p>Monitors mongodb oplog</p>
 	<p>The <code>msg.topic</code> contains the operation. The <code>msg.payload</code> contains the object, and <code>msg.id</code>		contains the object id</p>
 </script>
 
 <script type="text/javascript">
-	RED.nodes.registerType('mongodb-oplog', {
-		category: 'advanced-input',
-		color: "#C0DEED",
+	RED.nodes.registerType('mongodbOplog', {
+		category: 'input',
+		color: "#87A980",
 		defaults: {
 			name: { value: "" },
 			mongo_url: { value: "{{{MONGO_URL}}}", required: true },
@@ -39,7 +39,7 @@
 		},
 		inputs: 0,
 		outputs: 1,
-		icon: "mongodb.png",
+		icon: "inject.png",
 		label: function () {
 			return this.name || this.ns;
 		},
